@@ -38,6 +38,12 @@ if( ! class_exists( 'WC_Footer_Design' ) ){
 
             // admin menu
             add_action( 'admin_menu', [ $this, 'wc_admin_menu' ] );
+
+            // create donation link
+            add_filter( 'plugin_action_links', [ $this, 'donate_link' ], 10, 2 );
+
+            // plugin documentation
+            add_filter('plugin_row_meta', [ $this, 'documentation' ], 10, 2);
             
         }
 
@@ -117,6 +123,34 @@ if( ! class_exists( 'WC_Footer_Design' ) ){
          */
         public function _cb_footer_design(){
             require_once dirname(__FILE__) . '/inc/wc-admin-page.php';
+        }
+
+        /**
+         * pludin documentation page
+         *
+         * @param [type] $links
+         * @param [type] $file
+         * @return void
+         */
+        public function donate_link( $links, $file ){
+
+            if (plugin_basename(__FILE__) === $file) {
+                // $url = admin_url( 'admin.php' ) . '?page=wc-footer-design';
+                $donate_link = 'https://www.reddit.com/user/vxlrubel';
+                $documentation = "<a href=\"{$donate_link}\" target=\"_blank\">Donate</a>";
+                array_unshift( $links, $documentation );
+            }
+            return $links;
+        }
+
+        public function documentation( $meta, $file ){
+            if (plugin_basename(__FILE__) === $file) {
+                $doc_link = admin_url( 'admin.php' ) . '?page=wc-footer-design';
+                $documentation = "<a href=\"{$doc_link}\">Documentation</a>";
+                $meta[] = $documentation;
+            }
+        
+            return $meta;
         }
 
         /**

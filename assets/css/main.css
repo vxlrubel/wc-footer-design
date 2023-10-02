@@ -8,6 +8,7 @@
     background-color: #eaf1f4;
     transition: all 0.3s ease-in-out;
     padding: 25px 20px 0;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
 }
 
 .app-side-menu.show {

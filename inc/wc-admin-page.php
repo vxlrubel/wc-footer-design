@@ -9,7 +9,7 @@
 
             <h3>Documentation:</h3>
             <h4 class="fz-15">Installation</h4>
-            <p>01. You need to download the plugin. <a href="#" target="_blank">Download</a></p>
+            <p>01. You need to download the plugin. <a href="https://github.com/vxlrubel/wc-footer-design/archive/refs/heads/main.zip" target="_blank">Download</a></p>
             <p>02. Upload the plugin from dashboard <span class="strong">Plugins &gt; Add New &gt; Upload Plugin</span></p>
             <p>03. Install and active after uploading the plugin file.</p>
 
