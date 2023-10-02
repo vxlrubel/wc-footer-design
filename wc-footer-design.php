@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WC Footer Design
-Description: This plugin use for footer design of Woocommerce website
+Description: Upgrade your website's footer with 'WC Footer Design,' a powerful WordPress plugin. Create sleek, modern footers like e-commerce apps, easily customize layout, colors, and content for a professional touch.
 Version: 1.0
 Author: Rubel Mahmud
 Author URi: https://www.linkedin.com/in/vxlrubel
@@ -40,7 +40,7 @@ if( ! class_exists( 'WC_Footer_Design' ) ){
             add_action( 'admin_menu', [ $this, 'wc_admin_menu' ] );
 
             // create donation link
-            add_filter( 'plugin_action_links', [ $this, 'donate_link' ], 10, 2 );
+            add_filter( 'plugin_action_links', [ $this, 'settings_page' ], 10, 2 );
 
             // plugin documentation
             add_filter('plugin_row_meta', [ $this, 'documentation' ], 10, 2);
@@ -126,23 +126,29 @@ if( ! class_exists( 'WC_Footer_Design' ) ){
         }
 
         /**
-         * pludin documentation page
+         * pludin settings page
          *
          * @param [type] $links
          * @param [type] $file
          * @return void
          */
-        public function donate_link( $links, $file ){
+        public function settings_page( $links, $file ){
 
             if (plugin_basename(__FILE__) === $file) {
-                // $url = admin_url( 'admin.php' ) . '?page=wc-footer-design';
-                $donate_link = 'https://www.reddit.com/user/vxlrubel';
-                $documentation = "<a href=\"{$donate_link}\" target=\"_blank\">Donate</a>";
-                array_unshift( $links, $documentation );
+                $url = admin_url('nav-menus.php');
+                $settings = "<a href=\"{$url}\">Settings</a>";
+                array_unshift( $links, $settings );
             }
             return $links;
         }
 
+        /**
+         * documentation page
+         *
+         * @param [type] $meta
+         * @param [type] $file
+         * @return void
+         */
         public function documentation( $meta, $file ){
             if (plugin_basename(__FILE__) === $file) {
                 $doc_link = admin_url( 'admin.php' ) . '?page=wc-footer-design';
