@@ -1,0 +1,119 @@
+.app-side-menu {
+    position: fixed;
+    top: 0;
+    bottom: 70px;
+    left: -350px;
+    width: 250px;
+    z-index: 99999;
+    background-color: #eaf1f4;
+    transition: all 0.3s ease-in-out;
+    padding: 25px 20px 0;
+}
+
+.app-side-menu.show {
+    left: 0;
+}
+
+@media(min-width: 992px) {
+    .app-side-menu {
+        display: none !important;
+    }
+}
+
+.app-side-menu .close-menu {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    z-index: 1;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.app-side-menu .side-menu-close {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    background: #d63031;
+    color: #ffffff;
+    text-decoration: none;
+    min-width: 17px;
+}
+
+.app-menu {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #dfe6e9;
+    z-index: 99999;
+    height: 70px;
+}
+
+@media(min-width: 992px) {
+    .app-menu {
+        display: none;
+    }
+}
+
+.app-menu .container {
+    width: 100%;
+    padding: 0 15px;
+}
+
+.footer-app {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-app a {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 7px;
+    color: black;
+}
+
+.footer-app a span {
+    display: block;
+    font-size: 11px;
+    width: 100%;
+    text-align: center;
+}
+
+.active-home {
+    background-color: #0b4663 !important;
+    color: #ffffff !important;
+}
+
+.app-side-menu .menu {
+    padding: 0;
+    list-style: none;
+}
+
+.app-side-menu .menu a {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 16px;
+    text-decoration: none;
+}
