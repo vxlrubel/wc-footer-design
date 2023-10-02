@@ -21,6 +21,10 @@
     }
 }
 
+.app-side-menu a {
+    color: #444444 !important;
+}
+
 .app-side-menu .close-menu {
     position: absolute;
     bottom: 0;
