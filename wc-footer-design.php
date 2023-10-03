@@ -39,7 +39,7 @@ if( ! class_exists( 'WC_Footer_Design' ) ){
             // admin menu
             add_action( 'admin_menu', [ $this, 'wc_admin_menu' ] );
 
-            // create donation link
+            // create settings link
             add_filter( 'plugin_action_links', [ $this, 'settings_page' ], 10, 2 );
 
             // plugin documentation
